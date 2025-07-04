@@ -1,0 +1,281 @@
+/* Design Configuration Variables */
+:root {
+    /* Colors */
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --text-light: #9ca3af;
+    --background: #ffffff;
+    --surface: #f9fafb;
+    --border: #e5e7eb;
+    --accent: #f3f4f6;
+    
+    /* Typography */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    
+    /* Layout */
+    --max-width: 800px;
+    --border-radius: 0.5rem;
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    
+    /* Transitions */
+    --transition: all 0.2s ease-in-out;
+  }
+  
+  /* Reset and Base Styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--background);
+    padding: var(--spacing-xl);
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  
+  /* Typography */
+  h1 {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+    letter-spacing: -0.025em;
+  }
+  
+  h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: var(--spacing-2xl);
+    margin-bottom: var(--spacing-md);
+    letter-spacing: -0.025em;
+  }
+  
+  h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  p {
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+  }
+  
+  /* Links */
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+    font-weight: 500;
+  }
+  
+  a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+  }
+  
+  /* Navigation */
+  nav {
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--border);
+  }
+  
+  nav a {
+    margin-right: var(--spacing-lg);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    font-weight: 500;
+  }
+  
+  nav a:hover {
+    background-color: var(--surface);
+    text-decoration: none;
+  }
+  
+  nav a:last-child {
+    margin-right: 0;
+  }
+  
+  /* Main Content Layout */
+  .content {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-2xl);
+    margin-top: var(--spacing-xl);
+  }
+  
+  .text {
+    flex: 1;
+  }
+  
+  .image {
+    flex-shrink: 0;
+  }
+  
+  .image img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+  }
+  
+  /* Research Page Styles */
+  .paper {
+    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-xl);
+    background-color: var(--surface);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border);
+  }
+  
+  .paper h2 {
+    margin-top: 0;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .authors {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    font-style: italic;
+  }
+  
+  .abstract {
+    margin-bottom: 0;
+  }
+  
+  .abstract-label {
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  
+  /* Contact Information */
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+  
+  .contact-label {
+    font-weight: 600;
+    color: var(--text-secondary);
+    min-width: 60px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    body {
+      padding: var(--spacing-md);
+    }
+    
+    .content {
+      flex-direction: column;
+      gap: var(--spacing-lg);
+    }
+    
+    .image {
+      align-self: center;
+    }
+    
+    .image img {
+      width: 150px;
+      height: 150px;
+    }
+    
+    h1 {
+      font-size: var(--font-size-2xl);
+    }
+    
+    h2 {
+      font-size: var(--font-size-xl);
+    }
+    
+    nav a {
+      display: inline-block;
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .paper {
+      padding: var(--spacing-md);
+    }
+  }
+  
+  /* Utility Classes */
+  .text-center {
+    text-align: center;
+  }
+  
+  .text-secondary {
+    color: var(--text-secondary);
+  }
+  
+  .text-light {
+    color: var(--text-light);
+  }
+  
+  .mb-0 {
+    margin-bottom: 0;
+  }
+  
+  .mt-0 {
+    margin-top: 0;
+  }
+  
+  /* Print Styles */
+  @media print {
+    nav {
+      display: none;
+    }
+    
+    body {
+      padding: 0;
+      max-width: none;
+    }
+    
+    .content {
+      flex-direction: column;
+    }
+    
+    .image {
+      display: none;
+    }
+  }
