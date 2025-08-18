@@ -9,7 +9,8 @@
 
 /* Basic page setup */
 body {
-  font-family: Arial, sans-serif;
+  /*  font-family: Arial, sans-serif;*/
+  font-family: Calibri, sans-serif;
   background-color: white;
   color: #333;
   line-height: 1.6;
@@ -18,16 +19,16 @@ body {
 /* Black navigation bar at the top */
 nav {
   background-color: #333;
-  padding: 15px 0;
+  padding: 1rem 0;
   width: 100%;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  padding: 15px 20px;
-  margin: 0 5px;
-  border-radius: 5px;
+  padding: 1rem 1.25rem;
+  margin: 0 0.3rem;
+  border-radius: 0.3rem;
   font-weight: normal;
 }
 
@@ -37,17 +38,18 @@ nav a:hover {
 
 /* Active page highlighting */
 nav a.active {
-  background-color: #1a73e8;
+  /* background-color: #1a73e8; */
+  font-weight: bold;
   color: white;
 }
 
 /* Main content area */
 .content {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px;
+  max-width: 50rem;
+  margin: 2.5rem auto;
+  padding: 0 1.25rem;
   display: flex;
-  gap: 40px;
+  gap: 2.5rem;
   align-items: flex-start;
 }
 
@@ -56,31 +58,31 @@ nav a.active {
 }
 
 .image img {
-  width: 200px;
-  height: 200px;
+  width: 12.5rem;
+  height: 12.5rem;
   border-radius: 0;
   object-fit: cover;
 }
 
 /* Typography */
 h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  max-width: 800px;
+  font-size: 2.5rem;
+  margin-bottom: 1.25rem;
+  max-width: 50rem;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 20px;
-  margin-top: 40px;
+  padding: 0 1.25rem;
+  margin-top: 2.5rem;
 }
 
 h2 {
-  font-size: 1.8em;
-  margin-top: 30px;
-  margin-bottom: 15px;
+  font-size: 1.8rem;
+  margin-top: 1.9rem;
+  margin-bottom: 0.9rem;
 }
 
 p {
-  margin-bottom: 15px;
+  margin-bottom: 0.9rem;
 }
 
 /* Links */
@@ -96,9 +98,9 @@ a:hover {
 /* Research papers */
 .paper {
   background-color: #f8f9fa;
-  padding: 25px;
-  margin-bottom: 25px;
-  border-radius: 8px;
+  padding: 1.6rem;
+  margin-bottom: 1.6rem;
+  border-radius: 0.5rem;
   border-left: 4px solid #1a73e8;
 }
 
@@ -110,7 +112,7 @@ a:hover {
 .authors {
   font-style: italic;
   color: #666;
-  margin-bottom: 15px;
+  margin-bottom: 0.9rem;
 }
 
 .abstract-label {
@@ -119,11 +121,11 @@ a:hover {
 
 /* Contact info */
 .contact-info {
-  margin-top: 25px;
+  margin-top: 1.6rem;
 }
 
 .contact-item {
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
 }
 
 .contact-label {
@@ -132,19 +134,19 @@ a:hover {
 }
 
 /* Mobile responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .content {
     flex-direction: column;
     text-align: center;
   }
   
   .image img {
-    width: 150px;
-    height: 150px;
+    width: 9.4rem;
+    height: 9.4rem;
   }
   
   nav a {
     display: block;
-    margin: 5px 10px;
+    margin: 0.3rem 0.6rem;
   }
 }
