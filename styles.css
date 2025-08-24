@@ -46,7 +46,7 @@ nav a.active {
 /* Main content area */
 .content {
   max-width: 50rem;
-  margin: 2.5rem auto;
+  margin: 1rem auto;
   padding: 0 1.25rem;
   display: flex;
   gap: 2.5rem;
@@ -66,18 +66,18 @@ nav a.active {
 
 /* Typography */
 h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1.25rem;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
   max-width: 50rem;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 1.25rem;
+  padding: 0 1rem;
   margin-top: 2.5rem;
 }
 
 h2 {
   font-size: 1.5rem;
-  margin-top: 1.9rem;
+  margin-top: 1rem;
   margin-bottom: 0.5rem;
 }
 
@@ -97,11 +97,10 @@ a:hover {
 
 /* Research papers */
 .paper {
-  background-color: #f8f9fa;
-  padding: 1.6rem;
-  margin-bottom: 1.6rem;
+  background-color: #ffffff;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
   border-radius: 0.5rem;
-  border-left: 4px solid #1a73e8;
 }
 
 .paper h2 {
