@@ -144,6 +144,35 @@ a:hover {
   color: #0d5bb8;
 }
 
+/* PDF download button */
+.pdf-button {
+  background: none;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 0;
+}
+
+.pdf-button:hover {
+  color: #0d5bb8;
+  text-decoration: none;
+}
+
+/* PDF button when inline with Abstract button */
+.pdf-button-inline {
+  margin-left: 1rem;
+}
+
+/* PDF button at end of abstract - initially hidden */
+.pdf-button-end {
+  margin-left: 1rem;
+  display: none;
+}
+
 /* Contact info */
 .contact-info {
   margin-top: 1.6rem;

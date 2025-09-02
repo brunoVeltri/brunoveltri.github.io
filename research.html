@@ -20,15 +20,17 @@
       <div class="paper">
         <h2>Policy Uncertainty, Misinformation, and Retirement Age Reform</h2>
         <p class="authors">with Maximilian Blesch</p>
-          <button class="abstract-toggle" onclick="toggleAbstract('abstract_polunc')">
-          Abstract</button><span id="abstract_polunc" class="abstract">: This study examines the impact of Statutory Retirement Age (SRA) reforms on individual behavior and welfare in the presence of policy uncertainty and misinformation. We develop a structural life-cycle model in which individuals are uncertain about the future evolution of the SRA and misinformed about its importance. We derive individuals' expectations and information on the SRA from self-elicited belief data using the German Socio-Economic Panel Innovation Sample (SOEP-IS). The model accounts for key life-cycle savings and old-age labor supply determinants, such as human capital accumulation, involuntary job loss, health status, and family dynamics. We estimate the model using decision data from the core sample of the SOEP. We design counterfactual simulations to assess the effects of SRA reforms and illustrate the trade-offs of several implementation strategies.</span>
+        <button class="abstract-toggle" onclick="toggleAbstract('abstract_polunc')">
+        Abstract</button>
+        <a href="papers/policy_uncertainty.pdf" download="policy_uncertainty_retirement.pdf" class="pdf-button pdf-button-inline" id="pdf_polunc_inline">PDF</a><span id="abstract_polunc" class="abstract">: This study examines the impact of Statutory Retirement Age (SRA) reforms on individual behavior and welfare in the presence of policy uncertainty and misinformation. We develop a structural life-cycle model in which individuals are uncertain about the future evolution of the SRA and misinformed about its importance. We derive individuals' expectations and information on the SRA from self-elicited belief data using the German Socio-Economic Panel Innovation Sample (SOEP-IS). The model accounts for key life-cycle savings and old-age labor supply determinants, such as human capital accumulation, involuntary job loss, health status, and family dynamics. We estimate the model using decision data from the core sample of the SOEP. We design counterfactual simulations to assess the effects of SRA reforms and illustrate the trade-offs of several implementation strategies. <a href="papers/policy_uncertainty.pdf" download="policy_uncertainty_retirement.pdf" class="pdf-button pdf-button-end" id="pdf_polunc_end">PDF</a></span>
       </div>
       
       <div class="paper">
         <h2>Public Appeals and Collective Crisis Mitigation</h2>
         <p class="authors">with Peter Haan, Lea Heursen, Jule Specht, Georg Weizsäcker</p>
         <button class="abstract-toggle" onclick="toggleAbstract('abstract_appeals')">
-          Abstract</button><span id="abstract_appeals" class="abstract">: Arrivals of crises often trigger public appeals from policy leaders, attempting to encourage crisis-mitigating behaviors. We ask whether the tone of an appeal changes its effectiveness, and to what extent policymakers know what tone to use. Using a controlled experiment in a large, general-population sample, we first study the impact of appeals and of their emotional tone on contributions to a well-defined crisis mitigation effort. Two equivalent appeals have either positive-tone or negative-tone wordings, and both increase contributions by about 20% compared to no appeal. Next, a sample of policymakers (n=88) is presented with our design and asked to predict the outcome. Although they correctly predict the impact of the positive appeal, they substantially underestimate the effectiveness of the negative one.</span>
+        Abstract</button>
+        <a href="papers/public_appeals.pdf" download="public_appeals.pdf" class="pdf-button pdf-button-inline" id="pdf_appeals_inline">PDF</a><span id="abstract_appeals" class="abstract">: Arrivals of crises often trigger public appeals from policy leaders, attempting to encourage crisis-mitigating behaviors. We ask whether the tone of an appeal changes its effectiveness, and to what extent policymakers know what tone to use. Using a controlled experiment in a large, general-population sample, we first study the impact of appeals and of their emotional tone on contributions to a well-defined crisis mitigation effort. Two equivalent appeals have either positive-tone or negative-tone wordings, and both increase contributions by about 20% compared to no appeal. Next, a sample of policymakers (n=88) is presented with our design and asked to predict the outcome. Although they correctly predict the impact of the positive appeal, they substantially underestimate the effectiveness of the negative one. <a href="papers/public_appeals.pdf" download="public_appeals.pdf" class="pdf-button pdf-button-end" id="pdf_appeals_end">PDF</a></span>
       </div>
     </div>
   </div>
@@ -38,8 +40,8 @@
     <div class="text">
       <div class="paper">
         <h2>Underestimated Adaptability</h2>
-          <button class="abstract-toggle" onclick="toggleAbstract('abstract_adaptability')">
-          Abstract</button><span id="abstract_adaptability" class="abstract">: Recent theories predict attenuated responses to price changes due to cognitive limitations, leading to own-price and cross-price elasticities that are too close to zero. I test these theories and two key conjectures with an online experiment: (i) more deliberation time should decrease attenuation, and (ii) beliefs about future choices should be more attenuated than actual choices. The experiment uses induced quasilinear preferences with a reference point at the 'old' price optimum. After a price change, participants under time pressure predict their choice, then make an actual decision with more time. Results confirm both hypotheses. Participants begin evaluating choices near the old optimum and gradually move toward the new one, with predictions closer to the old optimum than actual choices. These findings suggest consumers systematically underestimate their adaptability to economic changes, with implications for commitment decisions and the political economy of price-based policies.</span>
+        <button class="abstract-toggle" onclick="toggleAbstract('abstract_adaptability')">
+        Abstract</button><span id="abstract_adaptability" class="abstract">: Recent theories predict attenuated responses to price changes due to cognitive limitations, leading to own-price and cross-price elasticities that are too close to zero. I test these theories and two key conjectures with an online experiment: (i) more deliberation time should decrease attenuation, and (ii) beliefs about future choices should be more attenuated than actual choices. The experiment uses induced quasilinear preferences with a reference point at the 'old' price optimum. After a price change, participants under time pressure predict their choice, then make an actual decision with more time. Results confirm both hypotheses. Participants begin evaluating choices near the old optimum and gradually move toward the new one, with predictions closer to the old optimum than actual choices. These findings suggest consumers systematically underestimate their adaptability to economic changes, with implications for commitment decisions and the political economy of price-based policies. <a href="papers/underestimated_adaptability.pdf" download="underestimated_adaptability.pdf" class="pdf-button">PDF</a></span>
       </div>
     </div>
   </div>
@@ -48,6 +50,20 @@
     function toggleAbstract(abstractId) {
       const abstract = document.getElementById(abstractId); 
       abstract.classList.toggle('visible');
+      
+      // Get the paper ID from the abstract ID (e.g., 'abstract_polunc' -> 'polunc')
+      const paperId = abstractId.replace('abstract_', '');
+      const inlineButton = document.getElementById('pdf_' + paperId + '_inline');
+      const endButton = document.getElementById('pdf_' + paperId + '_end');
+      
+      // Toggle PDF button visibility
+      if (abstract.classList.contains('visible')) {
+        inlineButton.style.display = 'none';
+        endButton.style.display = 'inline';
+      } else {
+        inlineButton.style.display = 'inline';
+        endButton.style.display = 'none';
+      }
     }
   </script>
 </body>
