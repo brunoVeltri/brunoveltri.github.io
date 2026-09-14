@@ -65,19 +65,30 @@ nav a.active {
 /* Typography */
 h1 {
   font-size: 2rem;
+  margin-top: 2.5rem;
   margin-bottom: 0.5rem;
-  max-width: 50rem;
   margin-left: auto;
   margin-right: auto;
   padding: 0 1rem;
-  margin-top: 2.5rem;
+  max-width: 50rem;
 }
 
 h2 {
-  font-size: 1.3rem;
-  margin-top: 1rem;
-  margin-bottom: 0.25rem;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+  max-width: 50rem;
 }
+
+h3 {
+  font-size: 1rem;
+  /* margin-top: 1rem;
+  margin-bottom: 0.25rem; */
+}
+
 
 p {
   margin-bottom: 0.25rem;
@@ -101,7 +112,7 @@ a:hover {
   border-radius: 0.5rem;
 }
 
-.paper h2 {
+.paper h3 {
   margin-top: 0;
   color: #333;
 }
@@ -148,8 +159,8 @@ a:hover {
   color: #0d5bb8;
 }
 
-/* PDF download button */
-.pdf-button {
+/* Paper tag buttons (PDF, Code, etc.) */
+.tag-button {
   background: none;
   border: none;
   color: #000000;
@@ -161,18 +172,18 @@ a:hover {
   padding: 0;
 }
 
-.pdf-button:hover {
+.tag-button:hover {
   color: #0d5bb8;
   text-decoration: none;
 }
 
-/* PDF button when inline with Abstract button */
-.pdf-button-inline {
+/* Tag button when inline with Abstract button */
+.tag-button-inline {
   margin-left: 1rem;
 }
 
-/* PDF button at end of abstract - initially hidden */
-.pdf-button-end {
+/* Tag button at end of abstract - initially hidden */
+.tag-button-end {
   margin-left: 1rem;
   display: none;
 }
