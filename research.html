@@ -2,73 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Research – Bruno Veltri</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research – Bruno Veltri</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="research.html" class="active">Research</a>
     <a href="cv/cv.pdf" download="bruno_veltri_cv.pdf">CV</a>
   </nav>
-  
-  <h2>Work in Progress</h1>
-  
-  <div class="content">
-    <div class="text">
-      <div class="paper">
-        <h3>Life-Cycle Responses to Pension Reform: The Role of Subjective Policy Beliefs</h2>
-        <p class="authors">with Maximilian Blesch</p>
-        <button class="abstract-toggle" onclick="toggleAbstract('abstract_polunc')">
-        Abstract</button>
-        <a href="papers/pension_beliefs.pdf" download="pension_beliefs.pdf" class="tag-button tag-button-inline" id="pdf_polunc_inline">PDF</a><span id="abstract_polunc" class="abstract">: This study quantifies the impact of Statutory Retirement Age (SRA) reforms on individual behavior and welfare in the presence of subjective beliefs about the policy environment. We elicit policy beliefs from novel survey data and estimate a rich structural life-cycle model of labor supply, retirement, and savings decisions. In the model, agents have probabilistic expectations about the future evolution of the SRA (policy uncertainty) and strongly overestimate the penalty for early retirement (misinformation). Our results show that while these beliefs distort behavior and reduce individual welfare, they can support policy objectives. While increases in the SRA delay retirement and boost old-age labor supply, we estimate negative reform effects on labor supply and savings of younger agents. Policy uncertainty attenuates these negative effects by 20-50 percent while maintaining effectiveness at the retirement margin. Eliminating misinformation would cause individuals to retire around 1.1 years earlier and reduce lifetime labor supply by 3.2 percent.<a href="papers/pension_beliefs.pdf" download="pension_beliefs.pdf" class="tag-button tag-button-end" id="pdf_polunc_end">PDF</a></span>
-      </div>
 
-      <div class="paper">
-        <h3>Underestimated Adaptability</h2>
-        <button class="abstract-toggle" onclick="toggleAbstract('abstract_adaptability')">
-        Abstract</button><span id="abstract_adaptability" class="abstract">: Recent theories predict attenuated responses to price changes due to cognitive limitations, leading to own-price and cross-price elasticities that are too close to zero. I test these theories and two key conjectures with an online experiment: (i) more deliberation time should decrease attenuation, and (ii) beliefs about future choices should be more attenuated than actual choices. The experiment uses induced quasilinear preferences with a reference point at the 'old' price optimum. After a price change, participants under time pressure predict their choice, then make an actual decision with more time. Results confirm both hypotheses. Participants begin evaluating choices near the old optimum and gradually move toward the new one, with predictions closer to the old optimum than actual choices. These findings suggest consumers systematically underestimate their adaptability to economic changes, with implications for commitment decisions and the political economy of price-based policies. <a href="papers/underestimated_adaptability.pdf" download="underestimated_adaptability.pdf" class="tag-button">PDF</a></span>
-      </div>
-    </div>
-  </div>
+  <main class="page">
 
-  <h2>Publications</h1>
+    <h2>Work in Progress</h2>
 
-  <div class="content">
-    <div class="text">
-      <div class="paper">
-        <h3><a href="https://www.sciencedirect.com/science/article/pii/S0167268126001642" target="_blank">Public Appeals and Collective Crisis Mitigation</a></h2>
-        <p class="authors">with Peter Haan, Lea Heursen, Jule Specht, Georg Weizsäcker</p>
-        <p class="paper_state">Journal of Economic Behavior and Organization, 2026</p>
-        <button class="abstract-toggle" onclick="toggleAbstract('abstract_appeals')">
-        Abstract</button>
-        <a href="https://github.com/brunoVeltri/public_appeals_replication_package" target="_blank" class="tag-button tag-button-inline" id="pdf_appeals_inline">Code</a><span id="abstract_appeals" class="abstract">: Arrivals of crises often trigger public appeals from policy leaders, attempting to encourage crisis-mitigating behaviors. We ask whether the tone of an appeal changes its effectiveness, and to what extent policymakers know what tone to use. Using a controlled experiment in a large, general-population sample, we first study the impact of appeals and of their emotional tone on contributions to a well-defined crisis mitigation effort. Two equivalent appeals have either positive-tone or negative-tone wordings, and both increase contributions by about 20% compared to no appeal. Next, a sample of policymakers (n=88) is presented with our design and asked to predict the outcome. Although they correctly predict the impact of the positive appeal, they substantially underestimate the effectiveness of the negative one.<a href="https://github.com/brunoVeltri/public_appeals_replication_package" target="_blank" class="tag-button tag-button-end" id="pdf_appeals_end">Code</a></span>
-      </div>
-    </div>
-  </div>
+    <!-- New paper: copy one <article class="paper"> block. Drop any line that
+         does not apply (authors, paper-state, links, whole details block). -->
 
-  <script>
-    function toggleAbstract(abstractId) {
-      const abstract = document.getElementById(abstractId); 
-      abstract.classList.toggle('visible');
-      
-      // Get the paper ID from the abstract ID (e.g., 'abstract_polunc' -> 'polunc')
-      const paperId = abstractId.replace('abstract_', '');
-      const inlineButton = document.getElementById('pdf_' + paperId + '_inline');
-      const endButton = document.getElementById('pdf_' + paperId + '_end');
-      
-      // Some papers don't have a toggling PDF button (e.g. published papers) - only toggle if present
-      if (inlineButton && endButton) {
-        if (abstract.classList.contains('visible')) {
-          inlineButton.style.display = 'none';
-          endButton.style.display = 'inline';
-        } else {
-          inlineButton.style.display = 'inline';
-          endButton.style.display = 'none';
-        }
-      }
-    }
-  </script>
+    <article class="paper">
+      <h3>Life-Cycle Responses to Pension Reform: The Role of Subjective Policy Beliefs</h3>
+      <p class="authors">with Maximilian Blesch</p>
+      <details>
+        <summary>Abstract
+          <a href="papers/pension_beliefs.pdf" download="pension_beliefs.pdf">PDF</a>
+        </summary>
+        <p>This study quantifies the impact of Statutory Retirement Age (SRA) reforms on individual behavior and welfare in the presence of subjective beliefs about the policy environment. We elicit policy beliefs from novel survey data and estimate a rich structural life-cycle model of labor supply, retirement, and savings decisions. In the model, agents have probabilistic expectations about the future evolution of the SRA (policy uncertainty) and strongly overestimate the penalty for early retirement (misinformation). Our results show that while these beliefs distort behavior and reduce individual welfare, they can support policy objectives. While increases in the SRA delay retirement and boost old-age labor supply, we estimate negative reform effects on labor supply and savings of younger agents. Policy uncertainty attenuates these negative effects by 20-50 percent while maintaining effectiveness at the retirement margin. Eliminating misinformation would cause individuals to retire around 1.1 years earlier and reduce lifetime labor supply by 3.2 percent.</p>
+      </details>
+    </article>
+
+    <article class="paper">
+      <h3>Underestimated Adaptability</h3>
+      <details>
+        <summary>Abstract</summary>
+        <p>Recent theories predict attenuated responses to price changes due to cognitive limitations, leading to own-price and cross-price elasticities that are too close to zero. I test these theories and two key conjectures with an online experiment: (i) more deliberation time should decrease attenuation, and (ii) beliefs about future choices should be more attenuated than actual choices. The experiment uses induced quasilinear preferences with a reference point at the 'old' price optimum. After a price change, participants under time pressure predict their choice, then make an actual decision with more time. Results confirm both hypotheses. Participants begin evaluating choices near the old optimum and gradually move toward the new one, with predictions closer to the old optimum than actual choices. These findings suggest consumers systematically underestimate their adaptability to economic changes, with implications for commitment decisions and the political economy of price-based policies.</p>
+      </details>
+    </article>
+
+    <h2>Publications</h2>
+
+    <article class="paper">
+      <h3><a href="https://www.sciencedirect.com/science/article/pii/S0167268126001642" target="_blank">Public Appeals and Collective Crisis Mitigation</a></h3>
+      <p class="authors">with Peter Haan, Lea Heursen, Jule Specht, Georg Weizsäcker</p>
+      <p class="paper-state">Journal of Economic Behavior and Organization, 2026</p>
+      <details>
+        <summary>Abstract
+          <a href="https://github.com/brunoVeltri/public_appeals_replication_package" target="_blank">Code</a>
+        </summary>
+        <p>Arrivals of crises often trigger public appeals from policy leaders, attempting to encourage crisis-mitigating behaviors. We ask whether the tone of an appeal changes its effectiveness, and to what extent policymakers know what tone to use. Using a controlled experiment in a large, general-population sample, we first study the impact of appeals and of their emotional tone on contributions to a well-defined crisis mitigation effort. Two equivalent appeals have either positive-tone or negative-tone wordings, and both increase contributions by about 20% compared to no appeal. Next, a sample of policymakers (n=88) is presented with our design and asked to predict the outcome. Although they correctly predict the impact of the positive appeal, they substantially underestimate the effectiveness of the negative one.</p>
+      </details>
+    </article>
+
+  </main>
+
 </body>
 </html>

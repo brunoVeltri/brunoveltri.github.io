@@ -1,24 +1,80 @@
-/* Remove default spacing from everything */
-* {
+/* Bruno Veltri — brunoveltri.github.io
+   Knobs live in :root. Space points downward (margin-bottom);
+   for space above, use padding-top. */
+
+
+/* ---- knobs --------------------------------------------------------------- */
+
+:root {
+
+  /* geometry */
+  --page-width:            50rem;   /* width of the text column             */
+  --page-padding:          1.25rem; /* gap to the left/right window edge    */
+  --space-below-nav:       2.5rem;  /* black bar -> first heading           */
+
+  /* vertical spacing */
+  --space-above-section:   1.5rem;  /* above "Publications" etc.            */
+  --space-below-heading:   1rem;    /* heading -> first item below it       */
+  --space-between-papers:  1.5rem;  /* one paper -> the next                */
+  --space-between-lines:   0.25rem; /* lines within a paper; paragraphs     */
+  --space-above-contact:   1.5rem;  /* bio text -> email/GitHub block       */
+
+  /* type */
+  --font:                  Calibri, sans-serif;
+  --line-height:           1.6;
+  --size-title:            2rem;    /* "Bruno Veltri"                       */
+  --size-section:          1rem;    /* "Work in Progress", "Publications"   */
+  --size-paper-title:      1rem;
+
+  /* colour */
+  --colour-text:           #333;
+  --colour-muted:          #666;    /* co-authors, journal name             */
+  --colour-link:           #1a73e8;
+  --colour-link-hover:     #0d5bb8;
+  --colour-bar:            #333;
+  --colour-bar-hover:      #555;
+
+  /* photo */
+  --photo-size:            12.5rem;
+  --photo-size-mobile:     9.4rem;
+}
+
+
+/* ---- foundations --------------------------------------------------------- */
+
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Basic page setup */
 body {
-  /*  font-family: Arial, sans-serif;*/
-  font-family: Calibri, sans-serif;
+  font-family: var(--font);
+  line-height: var(--line-height);
+  color: var(--colour-text);
   background-color: white;
-  color: #333;
-  line-height: 1.6;
 }
 
-/* Black navigation bar at the top */
+/* Stacks: gap between two children = margin-bottom of the upper one. */
+.page,
+.text,
+.paper {
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: var(--space-below-nav) var(--page-padding) 3rem;
+}
+
+
+/* ---- navigation bar ------------------------------------------------------ */
+
 nav {
-  background-color: #333;
+  background-color: var(--colour-bar);
   padding: 1rem 0;
-  width: 100%;
 }
 
 nav a {
@@ -27,193 +83,103 @@ nav a {
   padding: 1rem 1.25rem;
   margin: 0 0.3rem;
   border-radius: 0.3rem;
-  font-weight: normal;
 }
 
-nav a:hover {
-  background-color: #555;
+nav a:hover  { background-color: var(--colour-bar-hover); }
+nav a.active { font-weight: bold; }
+
+
+/* ---- headings and text --------------------------------------------------- */
+
+h1 {
+  font-size: var(--size-title);
+  margin-bottom: var(--space-below-heading);
 }
 
-/* Active page highlighting */
-nav a.active {
-  /* background-color: #1a73e8; */
-  font-weight: bold;
-  color: white;
+h2 {
+  font-size: var(--size-section);
+  margin-bottom: var(--space-below-heading);
+  padding-top: var(--space-above-section);
 }
 
-/* Main content area */
-.content {
-  max-width: 50rem;
-  margin: 1rem auto;
-  padding: 0 1.25rem;
+h2:first-child { padding-top: 0; }
+
+h3 {
+  font-size: var(--size-paper-title);
+  margin-bottom: var(--space-between-lines);
+}
+
+p { margin-bottom: var(--space-between-lines); }
+
+a       { color: var(--colour-link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+
+/* ---- home page ----------------------------------------------------------- */
+
+.intro {
   display: flex;
   gap: 2.5rem;
   align-items: flex-start;
 }
 
-.text {
-  flex: 1;
-}
+.text { flex: 1; }
 
-.image img {
-  width: 12.5rem;
-  height: 12.5rem;
-  border-radius: 0;
+.photo {
+  width: var(--photo-size);
+  height: var(--photo-size);
   object-fit: cover;
 }
 
-/* Typography */
-h1 {
-  font-size: 2rem;
-  margin-top: 2.5rem;
-  margin-bottom: 0.5rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 1rem;
-  max-width: 50rem;
-}
-
-h2 {
-  font-size: 1rem;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 1rem;
-  max-width: 50rem;
-}
-
-h3 {
-  font-size: 1rem;
-  /* margin-top: 1rem;
-  margin-bottom: 0.25rem; */
-}
+.contact        { padding-top: var(--space-above-contact); }
+.contact p      { margin-bottom: 0.5rem; }
+.contact .label { font-weight: bold; color: var(--colour-muted); }
 
 
-p {
-  margin-bottom: 0.25rem;
-}
+/* ---- research page ------------------------------------------------------- */
 
-/* Links */
-a {
-  color: #1a73e8;
-  text-decoration: none;
-}
+.paper { margin-bottom: var(--space-between-papers); }
 
-a:hover {
-  text-decoration: underline;
-}
+.authors     { color: var(--colour-muted); }
+.paper-state { color: var(--colour-muted); font-style: italic; }
 
-/* Research papers */
-.paper {
-  background-color: #ffffff;
-  padding: 1rem;
-  margin-bottom: 0.5rem;
-  border-radius: 0.5rem;
-}
-
-.paper h3 {
-  margin-top: 0;
-  color: #333;
-}
-
-.authors {
-  font-style: bold;
-  color: #666;
-  margin-bottom: 0.5rem;
-}
-
-.paper_state {
-  font-style: italic;
-  color: #666;
-  margin-bottom: 0.5rem;
-}
-
-.abstract-label {
+/* <details> is the browser's own show/hide widget — no JavaScript.
+   PDF/Code links sit inside <summary> so they share its line;
+   clicking one opens the link without toggling the abstract.
+   Add   list-style: none;   below to drop the triangle. */
+summary {
   font-weight: bold;
-}
-
-/* Abstract (with toggle functionality) */
-.abstract {
-  display: none; /* This hides the abstract by default */
-}
-
-.abstract.visible {
-  display: inline; /* This shows the abstract inline with the button */
-}
-
-.abstract-toggle {
-  background: none;
-  border: none;
-  color: #000000;
   cursor: pointer;
-  text-decoration: none;
-  font-size: inherit;
-  font-family: inherit;
-  font-weight: bold;
-  padding: 0;
-  margin-top: 0.25rem;
+  width: fit-content;
 }
 
-.abstract-toggle:hover {
-  color: #0d5bb8;
-}
+summary a,
+.links a       { color: black; }
+summary a:hover,
+.links a:hover  { color: var(--colour-link-hover); text-decoration: none; }
 
-/* Paper tag buttons (PDF, Code, etc.) */
-.tag-button {
-  background: none;
-  border: none;
-  color: #000000;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: inherit;
-  font-family: inherit;
-  font-weight: bold;
-  padding: 0;
-}
+summary a { margin-left: 1.25rem; }
 
-.tag-button:hover {
-  color: #0d5bb8;
-  text-decoration: none;
-}
+.links { font-weight: bold; padding-top: var(--space-between-lines); }
 
-/* Tag button when inline with Abstract button */
-.tag-button-inline {
-  margin-left: 1rem;
-}
+details p { padding-top: var(--space-between-lines); }
 
-/* Tag button at end of abstract - initially hidden */
-.tag-button-end {
-  margin-left: 1rem;
-  display: none;
-}
 
-/* Contact info */
-.contact-info {
-  margin-top: 1.6rem;
-}
+/* ---- narrow screens ------------------------------------------------------ */
 
-.contact-item {
-  margin-bottom: 0.5rem;
-}
-
-.contact-label {
-  font-weight: bold;
-  color: #666;
-}
-
-/* Mobile responsiveness */
 @media (max-width: 48rem) {
-  .content {
+
+  .intro {
     flex-direction: column;
+    align-items: center;
     text-align: center;
   }
-  
-  .image img {
-    width: 9.4rem;
-    height: 9.4rem;
+
+  .photo {
+    width: var(--photo-size-mobile);
+    height: var(--photo-size-mobile);
   }
-  
+
   nav a {
     display: block;
     margin: 0.3rem 0.6rem;
