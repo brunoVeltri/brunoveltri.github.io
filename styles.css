@@ -100,6 +100,7 @@ h2 {
   font-size: var(--size-section);
   margin-bottom: var(--space-below-heading);
   padding-top: var(--space-above-section);
+  border-bottom: 1px solid var(--colour-muted);
 }
 
 h2:first-child { padding-top: 0; }
